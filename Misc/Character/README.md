@@ -6,7 +6,7 @@
 
 | Property | Value |
 |----------|-------|
-| **Event** | HTB Cyber Apocalypse CTF |
+| **Event** | HTB CTF Try Out (Event 1434) |
 | **Category** | Misc |
 | **Difficulty** | ⭐ Easy |
 | **Points** | 325 |
@@ -202,7 +202,7 @@ HTB{sequential_character_extraction_ftw}
 
 **Writeup Author:** CTF Team  
 **Challenge Author:** HackTheBox  
-**Challenge Platform:** Hack The Box - Cyber Apocalypse CTF
+**Challenge Platform:** Hack The Box - CTF Try Out (Event 1434)
 
 ---
 

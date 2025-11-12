@@ -237,7 +237,7 @@ Each challenge now includes:
 #### Completed (4/31)
 
 **1. Misc/Character**
-- Added event metadata (HTB Cyber Apocalypse)
+- Added event metadata (HTB CTF Try Out Event 1434)
 - Tags: socket, network, protocol, python
 - Lessons learned section (4 subsections)
 - Real-world applications

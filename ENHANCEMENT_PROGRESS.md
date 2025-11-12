@@ -93,7 +93,7 @@ For each challenge, add:
 ```markdown
 | Field | Value |
 |-------|-------|
-| Event | HTB Business CTF 2024 or HTB Cyber Apocalypse |
+| Event | HTB CTF Try Out (Event 1434) |
 | Category | [Category] |
 | Difficulty | [Easy/Medium/Hard] ⭐⭐⭐ |
 | Points | [Points if known] |
@@ -165,7 +165,7 @@ For each challenge, add:
 ## 🤝 Credits
 
 - **Challenge Author:** Hack The Box
-- **Challenge Platform:** HTB Business CTF 2024 / HTB Cyber Apocalypse
+- **Challenge Platform:** HTB CTF Try Out (Event 1434)
 - **Writeup Author:** Om Gajjar
 - **Year:** 2025
 ```

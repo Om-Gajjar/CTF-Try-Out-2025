@@ -384,7 +384,7 @@ Automated Update → RCE → Flag Capture
 
 ## References
 
-- [Official HTB Business CTF 2024 Writeup](https://github.com/5ky9uy/htb-business-ctf-2024)
+- [HTB CTF Try Out Event 1434](https://ctf.hackthebox.com/event/1434)
 - [Verdaccio Documentation](https://verdaccio.org/docs/what-is-verdaccio/)
 - [OWASP SSRF Prevention](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html)
 - [NPM Supply Chain Security](https://docs.npmjs.com/about-supply-chain-security)

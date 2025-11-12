@@ -1,6 +1,6 @@
 # Blueprint Heist - Challenge Directory
 
-**HackTheBox Business CTF 2024 - Web Exploitation Challenge**
+**HackTheBox CTF Try Out (Event 1434) - Web Exploitation Challenge**
 
 ## 🎯 Challenge Information
 
@@ -318,7 +318,7 @@ This challenge teaches:
 ║              🎉 BLUEPRINT HEIST SOLVED! 🎉                ║
 ║                                                            ║
 ║  Challenge: Blueprint Heist                                ║
-║  Platform:  HackTheBox Business CTF 2024                   ║
+║  Platform:  HackTheBox CTF Try Out (Event 1434)           ║
 ║  Category:  Web Exploitation                               ║
 ║  Difficulty: Easy                                          ║
 ║  Points:    1000                                           ║
@@ -370,7 +370,7 @@ Always practice **ethical hacking** with proper authorization.
 ## 🙏 Credits
 
 **Challenge Author:** lordrukie (HackTheBox)  
-**Platform:** HackTheBox Business CTF 2024  
+**Platform:** HackTheBox CTF Try Out (Event 1434)  
 **Solver:** AI Security Analyst  
 **Date Solved:** November 10, 2025  
 

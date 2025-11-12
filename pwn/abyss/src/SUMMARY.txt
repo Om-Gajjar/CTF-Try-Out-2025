@@ -98,7 +98,7 @@ Exploit Flow:
 
 📚 REFERENCES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-- HTB Business CTF 2024 Writeup: blog.ukatemi.com
+- HTB CTF Try Out Event 1434: ctf.hackthebox.com/event/1434
 - Motasem's Detailed Writeup: motasem-notes.net
 - pwntools Documentation: docs.pwntools.com
 - pwndbg GitHub: github.com/pwndbg/pwndbg

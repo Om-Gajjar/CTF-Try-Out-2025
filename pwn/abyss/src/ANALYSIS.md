@@ -86,7 +86,7 @@ According to writeups:
 
 ## References
 
-- [HTB Business CTF 2024 - Abyss Writeup](https://blog.ukatemi.com/blog/2024-05-17-hackthebox-business-pwn-abyss/)
+- [HTB CTF Try Out Event 1434](https://ctf.hackthebox.com/event/1434)
 - [Motasem's Abyss Writeup](https://motasem-notes.net/hackthebox-abyss-writeup-binary-exploitation-ctf/)
 
 ---

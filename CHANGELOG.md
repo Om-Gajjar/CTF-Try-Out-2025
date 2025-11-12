@@ -9,13 +9,13 @@ All notable changes to the CTF-Try-Out-2025 repository organization will be docu
 #### LICENSE Enhanced
 - Updated LICENSE with comprehensive attribution section
 - Added Hack The Box (HTB) challenge source attribution
-- Documented HTB Business CTF 2024 and HTB Cyber Apocalypse as challenge sources
+- Documented HTB CTF Try Out (Event 1434) as challenge source
 - Added tools and environment attribution:
   - Operating Systems: Kali Linux (VMware), WSL Ubuntu
   - Security Tools: Kali Linux toolset
   - Development Tools: GitHub Copilot CLI, AI assistants
   - Network Tools: ngrok
-  - Reference: HTB Business CTF 2024 official repository
+  - Reference: HTB CTF Try Out Event 1434 (https://ctf.hackthebox.com/event/1434)
 - Added educational use disclaimer
 - Added challenge status section
 - Included comprehensive acknowledgments
@@ -32,7 +32,7 @@ All notable changes to the CTF-Try-Out-2025 repository organization will be docu
   - Kali Linux toolset
   - GitHub Copilot CLI, AI assistants
   - ngrok
-  - HTB Business CTF 2024 repository reference
+  - HTB CTF Try Out Event 1434 reference
 - Updated pwn category listing (5/6 challenges, 1 in progress)
 - Added "Categories In Progress" section
 - Enhanced tools list with additional tools
@@ -49,8 +49,8 @@ All notable changes to the CTF-Try-Out-2025 repository organization will be docu
 ### Attribution Details
 
 **Challenge Sources:**
-- HTB Business CTF 2024
-- HTB Cyber Apocalypse series
+- HTB CTF Try Out (Event 1434)
+- Event URL: https://ctf.hackthebox.com/event/1434
 - All challenges © Hack The Box Ltd.
 - Solutions © 2025 Om Gajjar
 
@@ -61,7 +61,7 @@ All notable changes to the CTF-Try-Out-2025 repository organization will be docu
 - GitHub Copilot CLI
 - Various AI assistants
 - ngrok for tunneling
-- Reference: https://github.com/hackthebox/business-ctf-2024
+- Reference: https://ctf.hackthebox.com/event/1434
 
 ---
 
@@ -108,7 +108,7 @@ Each enhanced challenge now includes:
 
 #### Challenges Enhanced
 1. **Misc/Character**
-   - Added HTB Cyber Apocalypse metadata
+   - Added HTB CTF Try Out Event 1434 metadata
    - Tags: socket, network, protocol, python
    - Comprehensive lessons learned (4 subsections)
    - Real-world applications and insights

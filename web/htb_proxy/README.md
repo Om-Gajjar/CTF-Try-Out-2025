@@ -1,4 +1,4 @@
-# blueprint_heist - CTF Challenge
+# htb_proxy - CTF Challenge
 
 ## 📋 Challenge Information
 
@@ -12,14 +12,14 @@ Web security challenge. See docs/ for detailed solution guides.
 ## 🚀 Quick Start
 
 ```bash
-cd web/blueprint_heist
+cd web/htb_proxy
 # See docs/ for complete instructions
 ```
 
 ## 📁 Folder Structure
 
 ```
-blueprint_heist/
+htb_proxy/
 ├── README.md
 ├── solution/              # Exploit scripts
 ├── data/                  # Challenge files, Docker configs

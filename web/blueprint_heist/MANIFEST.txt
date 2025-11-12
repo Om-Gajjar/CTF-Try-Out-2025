@@ -1,0 +1,191 @@
+Blueprint Heist - File Manifest
+HackTheBox Business CTF 2024
+Generated: November 10, 2025
+
+═══════════════════════════════════════════════════════════════
+
+CHALLENGE FILES INVENTORY
+
+═══════════════════════════════════════════════════════════════
+
+📄 MAIN DOCUMENTATION (Start Here!)
+───────────────────────────────────────────────────────────────
+  README.md                 - Directory index and quick start guide
+  WRITEUP.md                - Complete detailed writeup (22KB)
+  CHALLENGE_SUMMARY.md      - Quick overview and statistics (6KB)
+  flag.txt                  - The captured flag
+
+📚 SUPPORTING DOCUMENTATION
+───────────────────────────────────────────────────────────────
+  CODE_ANALYSIS.md          - Full code analysis (15KB)
+  COMPLETE_SOLUTION.md      - Step-by-step solution (8KB)
+  STUDENT_GUIDE.md          - Beginner-friendly guide (8KB)
+  QUICK_REFERENCE.md        - Commands reference (9KB)
+  SOLUTION_DIAGRAM.txt      - Visual diagrams (13KB)
+  FINAL_INSTRUCTIONS.md     - Setup guide (5KB)
+  NGROK_ISSUE.md            - Troubleshooting (3KB)
+  ANALYSIS.md               - Initial notes (4KB)
+
+🔧 EXPLOIT SCRIPTS
+───────────────────────────────────────────────────────────────
+  final_exploit.py          - Main Python exploit (WORKING!)
+  exploit.sh                - Bash exploit script
+  run_exploit.sh            - Full automated exploit
+  redirect.php              - HTTP redirect helper
+
+🐳 DOCKER ENVIRONMENT
+───────────────────────────────────────────────────────────────
+  Dockerfile                - Container build file
+  build-docker.sh           - Build script
+  entrypoint.sh             - Container entrypoint
+
+💻 APPLICATION SOURCE CODE
+───────────────────────────────────────────────────────────────
+
+app/
+├── index.js                    - Main application entry point
+├── package.json                - Node.js dependencies
+├── .env                        - Environment variables (JWT SECRET!)
+│
+├── controllers/
+│   ├── authController.js       - JWT authentication logic
+│   ├── downloadController.js   - PDF generation (SSRF VULN!)
+│   └── errorController.js      - Error handling (TEMPLATE INJECTION!)
+│
+├── routes/
+│   ├── public.js               - Public API endpoints
+│   └── internal.js             - Admin API endpoints
+│
+├── schemas/
+│   └── schema.js               - GraphQL schema (SQL INJECTION!)
+│
+├── models/
+│   └── users.js                - User data model
+│
+├── utils/
+│   ├── database.js             - MySQL connection
+│   └── security.js             - Security functions (REGEX BYPASS!)
+│
+├── views/
+│   ├── index.ejs               - Homepage template
+│   ├── admin.ejs               - Admin dashboard template
+│   ├── errors/                 - Error templates
+│   │   ├── 400.ejs             - Bad Request
+│   │   ├── 401.ejs             - Unauthorized
+│   │   ├── 403.ejs             - Forbidden
+│   │   ├── 500.ejs             - Internal Server Error
+│   │   └── error.ejs           - Generic error
+│   │   # NOTE: 404.ejs MISSING (exploit target!)
+│   └── reports/                - Report templates
+│       ├── progress-report.ejs
+│       └── enviromental-report.ejs
+│
+├── static/
+│   ├── css/                    - Stylesheets
+│   ├── js/
+│   │   └── admin.js            - Admin page JS (GraphQL injection point)
+│   └── images/                 - Static images
+│
+└── uploads/                    - PDF output directory
+
+config/
+├── readflag.c                  - SUID binary source (reads flag as root)
+└── supervisord.conf            - Process supervisor configuration
+
+database/
+└── db.sql                      - Database schema and initial data
+
+═══════════════════════════════════════════════════════════════
+
+VULNERABILITY SUMMARY
+
+═══════════════════════════════════════════════════════════════
+
+1. SSRF via wkhtmltopdf
+   Location: app/controllers/downloadController.js
+   Impact: Access internal services, bypass localhost restrictions
+
+2. HTTP Redirect to file:// (CVE-2020-21365)
+   Location: wkhtmltopdf 0.12.5 behavior
+   Impact: Local file read via SSRF
+
+3. SQL Injection with Newline Bypass
+   Location: app/schemas/schema.js (getDataByName query)
+   Impact: Database manipulation, file write via INTO OUTFILE
+
+4. Regex Bypass
+   Location: app/utils/security.js (detectSqli function)
+   Issue: Pattern /^.*[chars]/ doesn't match newlines (\n)
+
+5. EJS Template Injection
+   Location: app/controllers/errorController.js
+   Impact: Remote code execution via malicious templates
+
+6. JWT Secret Exposure
+   Location: app/.env
+   Impact: Authentication bypass via token forgery
+
+═══════════════════════════════════════════════════════════════
+
+EXPLOIT CHAIN
+
+═══════════════════════════════════════════════════════════════
+
+Step 1: SSRF + HTTP Redirect
+  → Read /app/.env to get JWT secret
+
+Step 2: JWT Forgery
+  → Create admin token with stolen secret
+
+Step 3: SSRF to GraphQL
+  → Access localhost:1337/graphql from server context
+
+Step 4: SQL Injection
+  → Bypass regex with newline character
+  → Write malicious EJS template to 404.ejs
+
+Step 5: Template Injection
+  → Trigger 404 error
+  → Execute JavaScript in template
+  → Run /readflag command as root
+
+Step 6: Flag Retrieved!
+  → HTB{ch41ning_m4st3rs_b4y0nd_1m4g1nary_7f3e2b14969335049b602fd88507b1f5}
+
+═══════════════════════════════════════════════════════════════
+
+FILE COUNT SUMMARY
+
+═══════════════════════════════════════════════════════════════
+
+Documentation Files:     13
+Exploit Scripts:         4
+Docker Files:            3
+Source Code Files:       ~30+
+Total Size:              ~100KB (documentation)
+
+═══════════════════════════════════════════════════════════════
+
+USAGE INSTRUCTIONS
+
+═══════════════════════════════════════════════════════════════
+
+Quick Start:
+1. Read README.md for directory overview
+2. Read WRITEUP.md for complete walkthrough
+3. Run: python3 final_exploit.py
+
+For Learning:
+- Beginners: Start with STUDENT_GUIDE.md
+- Advanced: Read CODE_ANALYSIS.md
+- Reference: Use QUICK_REFERENCE.md
+
+═══════════════════════════════════════════════════════════════
+
+STATUS: ✅ CHALLENGE COMPLETED
+FLAG: HTB{ch41ning_m4st3rs_b4y0nd_1m4g1nary_7f3e2b14969335049b602fd88507b1f5}
+
+═══════════════════════════════════════════════════════════════
+
+Last Updated: November 10, 2025
+Version: 1.0

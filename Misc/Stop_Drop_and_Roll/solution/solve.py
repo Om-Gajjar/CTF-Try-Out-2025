@@ -1,10 +1,32 @@
 #!/usr/bin/env python3
+"""
+Stop, Drop, and Roll CTF Challenge - Solution Script
+
+This script solves an interactive scenario-based challenge where rapid
+responses to emergency situations are required.
+
+Target: 94.237.55.38:58034
+Category: Misc
+
+Scenario Mappings:
+- GORGE -> STOP
+- PHREAK -> DROP
+- FIRE -> ROLL
+"""
 
 import socket
 
-# Connect to the server
+# Target configuration
 host = '94.237.55.38'
 port = 58034
+
+print("=" * 60)
+print("Stop, Drop, and Roll - CTF Challenge Solver")
+print("=" * 60)
+print(f"Target: {host}:{port}")
+print("Scenario Mappings: GORGE->STOP, PHREAK->DROP, FIRE->ROLL")
+print("=" * 60)
+print()
 
 conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 conn.connect((host, port))

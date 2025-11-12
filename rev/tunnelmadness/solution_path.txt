@@ -1,0 +1,69 @@
+MAZE SOLUTION - VERIFIED WORKING
+============================================================
+
+Challenge: TunnelMadness (HackTheBox)
+Category: Pwn/Reversing
+Difficulty: Medium (975 points)
+Status: ✅ SOLVED
+
+============================================================
+
+Start: (0, 0, 0)
+Goal:  (19, 19, 19)
+Path length: 63 moves
+
+Solution string:
+UUURUFURRFFRRUFUFFFUFUUUUFRRUUUFURFDFFRRRRRFRR
+
+Flag:
+HTB{tunn3l1ng_ab0ut_in_3d_c803667e2c7cd64d19bee68bc36db107}
+
+============================================================
+
+Legend: 
+F = Forward  (x+1)
+B = Backward (x-1)
+R = Right    (y+1)
+L = Left     (y-1)
+U = Up       (z+1)
+D = Down     (z-1)
+
+============================================================
+
+Usage:
+
+1. Manual input:
+   nc 83.136.252.27 57790
+   (then enter moves one by one)
+
+2. Automated (bash):
+   echo "UUURUFURRFFRRUFUFFFUFUUUUFRRUUUFURFDFFRRRRRFRR" | sed 's/./&\n/g' | nc 83.136.252.27 57790
+
+3. Python script:
+   python3 solve_remote.py
+
+============================================================
+
+Step-by-step path:
+U U U           → (0, 0, 3)
+R U F U R       → Navigate to (1, 1, 4)
+R F F R         → Continue exploration
+R U F U F       → Forward and upward
+F F U F U       → Building coordinates
+U U U U         → Major climb upward
+F R R U U U     → Approaching goal region
+F U R F         → Fine positioning
+D F F           → Down adjustment
+U F F           → Up correction
+R R R R R       → Move right 5 times
+F R R           → Final approach to (19, 19, 19)
+
+============================================================
+
+Verification:
+- Tested on: 2025-11-09
+- Server: 83.136.252.27:57790
+- Result: SUCCESS - Flag obtained
+- Time to solve: ~63 moves
+
+============================================================

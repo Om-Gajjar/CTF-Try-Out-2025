@@ -1,0 +1,148 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                   HTB REGULARITY - SOLUTION PACKAGE                          ║
+╔══════════════════════════════════════════════════════════════════════════════╗
+
+✅ CHALLENGE SOLVED!
+
+Flag: HTB{juMp1nG_w1tH_tH3_r3gIsT3rS?_f2f06e7ebdddb7d46d7e2def9bc16714}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTATION CREATED (979 lines total):
+
+1. README.md (315 lines)
+   → Start here! Overview of all files and quick start guide
+   → Perfect entry point for beginners
+
+2. SOLUTION.md (458 lines)
+   → Complete technical writeup with step-by-step guide
+   → Includes visual diagrams and beginner-friendly explanations
+   → Covers: vulnerability analysis, exploitation, and key concepts
+
+3. QUICK_REFERENCE.md (206 lines)
+   → Cheat sheet format for quick lookups
+   → Contains one-liner exploit and command reference
+   → Perfect for when you need quick info
+
+4. final_working_exploit.py (100+ lines)
+   → Production-ready exploit with full comments
+   → Command-line argument support
+   → Error handling and verbose output
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 KEY TECHNIQUE: RET2REG (Return to Register)
+
+Vulnerability:  Buffer overflow (reads 272 bytes into 256-byte buffer)
+Bypass:         Use jmp rsi gadget at 0x401041
+Why it works:   RSI register points to our buffer after read()
+Result:         Execute shellcode without knowing stack address!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 QUICK START FOR STUDENTS:
+
+1. Read README.md first (5 minutes)
+2. Read SOLUTION.md sections gradually (1-2 hours)
+3. Run: python3 final_working_exploit.py <host> <port>
+4. Keep QUICK_REFERENCE.md handy for lookups
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 LEARNING OBJECTIVES ACHIEVED:
+
+✓ Understanding buffer overflows
+✓ Stack structure and memory layout
+✓ x86-64 registers (RAX, RSI, RDI, RSP, RIP)
+✓ Little endian format
+✓ Assembly basics (jmp, syscall, ret)
+✓ Shellcode creation
+✓ ASLR bypass techniques
+✓ Binary analysis tools (objdump, readelf, gdb)
+✓ Exploit development in Python
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎓 PERFECT FOR: 2nd Year BScIT Students
+
+✓ Beginner-friendly explanations
+✓ Real-world security concepts
+✓ Step-by-step methodology
+✓ No assumed prior knowledge
+✓ Includes "why" not just "how"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 PACKAGE CONTENTS:
+
+Documentation:
+├── README.md              (Entry point & overview)
+├── SOLUTION.md            (Complete technical guide)
+├── QUICK_REFERENCE.md     (Cheat sheet)
+└── SUMMARY.txt            (This file)
+
+Exploits:
+├── final_working_exploit.py   (Production exploit - USE THIS!)
+├── exploit.py                 (Development version)
+├── interactive_exploit.py     (Interactive shell)
+└── srop_attempt.py            (Alternative technique)
+
+Challenge Files:
+├── regularity             (Vulnerable binary)
+└── flag.txt               (Local test flag)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔑 TECHNICAL SUMMARY:
+
+Binary:      64-bit ELF, statically linked, no PIE
+Protections: Stack executable (RWE), no canary, no RELRO
+Gadget:      jmp rsi at 0x401041
+Shellcode:   execve("/bin/sh") - 23 bytes
+Payload:     [shellcode][NOP x 233][return_addr] = 264 bytes
+Technique:   Ret2Reg (bypass ASLR by using register)
+
+Memory Layout:
+  [0x000 - 0x016] Shellcode (23 bytes)
+  [0x017 - 0x0FF] NOP sled (233 bytes)
+  [0x100 - 0x107] Return addr: 0x0000000000401041
+
+Execution Flow:
+  read() → ret → 0x401041 → jmp rsi → shellcode → shell!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ SPECIAL FEATURES:
+
+• Zero external dependencies (pure Python stdlib)
+• Works with or without pwntools
+• Detailed comments throughout code
+• Visual diagrams in documentation
+• Beginner-friendly explanations
+• Command-line argument support
+• Error handling and troubleshooting guide
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 SUCCESS METRICS:
+
+✓ Flag captured: HTB{juMp1nG_w1tH_tH3_r3gIsT3rS?_f2f06e7ebdddb7d46d7e2def9bc16714}
+✓ Comprehensive documentation created
+✓ Multiple exploit versions available
+✓ Educational value maximized
+✓ Ready for future reference
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 Date: November 10, 2025
+🏆 Challenge: Regularity (HTB Pwn - Very Easy)
+📝 Documentation: Complete (979 lines across 3 files)
+💻 Exploits: 4 versions available
+✅ Status: SOLVED AND DOCUMENTED
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Remember: Understanding is more important than just solving!
+Take your time with the documentation - every expert was once a beginner! 🚀
+
+╚══════════════════════════════════════════════════════════════════════════════╝

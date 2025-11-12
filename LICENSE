@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 OM GAJJAR
+Copyright (c) 2025 Om Gajjar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,9 @@ SOFTWARE.
 
 ---
 
-## Challenge Attribution
+## Attribution and Acknowledgments
+
+### Challenge Attribution
 
 All CTF challenges in this repository are from **Hack The Box (HTB)** events,
 primarily from HTB CTF Try Out.
@@ -35,7 +37,7 @@ The challenges themselves are property of Hack The Box Ltd. This repository
 contains educational writeups, solutions, and documentation created by the
 author for learning purposes.
 
-## Tools & Environment Attribution
+### Tools & Environment Attribution
 
 Solutions in this repository were developed using:
 - **Operating Systems**: Kali Linux (VMware), WSL Ubuntu
@@ -44,6 +46,15 @@ Solutions in this repository were developed using:
 - **Network Tools**: ngrok for tunneling
 - **Reference Materials**: HTB Business CTF 2024 official repository
   (https://github.com/hackthebox/business-ctf-2024)
+
+### Community Acknowledgments
+
+- Hack The Box team for creating excellent CTF challenges
+- HTB Community for sharing knowledge and writeups
+- Open-source security tools and their maintainers
+- AI assistants for development support
+
+---
 
 ## Educational Use Disclaimer
 
@@ -54,15 +65,3 @@ personal learning labs.
 
 **Users are responsible for ensuring they comply with all applicable laws and
 regulations when using the information contained in this repository.**
-
-## Challenge Status
-
-Most challenges have been solved and documented. Some challenges may be marked
-as "In Progress" or incomplete and are being actively worked on.
-
-## Acknowledgments
-
-- Hack The Box team for creating excellent CTF challenges
-- HTB Community for sharing knowledge and writeups
-- Open-source security tools and their maintainers
-- AI assistants for development support

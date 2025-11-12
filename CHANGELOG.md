@@ -2,6 +2,69 @@
 
 All notable changes to the CTF-Try-Out-2025 repository organization will be documented in this file.
 
+## [2025-11-12] - Attribution & License Update
+
+### Repository Information Update
+
+#### LICENSE Enhanced
+- Updated LICENSE with comprehensive attribution section
+- Added Hack The Box (HTB) challenge source attribution
+- Documented HTB Business CTF 2025 and HTB Cyber Apocalypse as challenge sources
+- Added tools and environment attribution:
+  - Operating Systems: Kali Linux (VMware), WSL Ubuntu
+  - Security Tools: Kali Linux toolset
+  - Development Tools: GitHub Copilot CLI, AI assistants
+  - Network Tools: ngrok
+  - Reference: HTB Business CTF 2025 official repository
+- Added educational use disclaimer
+- Added challenge status section
+- Included comprehensive acknowledgments
+
+#### README.md Updates
+- Updated challenge count: 31 → 32 challenges
+- Added HTB platform badge
+- Updated completion status: 100% → 97% (1 challenge in progress)
+- Added pwn category challenge: **router_web** (Web-based pwn, in progress)
+- Enhanced "About" section with HTB attribution
+- Added new section: "Challenge Source" with HTB event details
+- Added new section: "Development Environment" with tools used:
+  - Kali Linux (VMware), WSL Ubuntu
+  - Kali Linux toolset
+  - GitHub Copilot CLI, AI assistants
+  - ngrok
+  - HTB Business CTF 2025 repository reference
+- Updated pwn category listing (5/6 challenges, 1 in progress)
+- Added "Categories In Progress" section
+- Enhanced tools list with additional tools
+- Updated acknowledgments with development environment
+- Corrected statistics to reflect 32 total challenges
+
+#### Statistical Updates
+- Total challenges: 31 → 32
+- Completed writeups: 31 → 30
+- In progress: 0 → 1 (pwn/router_web)
+- pwn category: 5 → 6 challenges (5 complete, 1 in progress)
+- Completion percentage: 100% → 97%
+
+### Attribution Details
+
+**Challenge Sources:**
+- HTB Business CTF 2025
+- HTB Cyber Apocalypse series
+- All challenges © Hack The Box Ltd.
+- Solutions © 2025 Om Gajjar
+
+**Tools & Environment:**
+- Kali Linux on VMware
+- WSL Ubuntu
+- Complete Kali toolset
+- GitHub Copilot CLI
+- Various AI assistants
+- ngrok for tunneling
+- Reference: https://github.com/hackthebox/business-ctf-2025
+
+---
+
 ## [2025-11-12] - Benchmarking Enhancement Phase
 
 ### Major Update: Repository Enhancement Based on Industry Best Practices

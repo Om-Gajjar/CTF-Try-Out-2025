@@ -1,15 +1,16 @@
 # CTF-Try-Out-2025 🏴‍☠️
 
-> A comprehensive collection of 31 CTF challenge writeups and solutions from Hack The Box Cyber Apocalypse and other CTF events
+> A comprehensive collection of CTF challenge writeups and solutions from **Hack The Box (HTB) Business CTF 2025** and **HTB Cyber Apocalypse** competitions
 
-[![Challenges](https://img.shields.io/badge/Challenges-31-brightgreen)]()
+[![Challenges](https://img.shields.io/badge/Challenges-32-brightgreen)]()
 [![Categories](https://img.shields.io/badge/Categories-9-blue)]()
-[![Completion](https://img.shields.io/badge/Completion-100%25-success)]()
+[![Completion](https://img.shields.io/badge/Completion-97%25-success)]()
 [![Documentation](https://img.shields.io/badge/Documentation-Complete-yellow)]()
+[![HTB](https://img.shields.io/badge/Platform-Hack%20The%20Box-9FEF00)]()
 
 ## 📖 About This Repository
 
-This repository contains professionally organized solutions, comprehensive writeups, and exploit code for 31 CTF challenges across 9 security categories. Each challenge has been documented with:
+This repository contains professionally organized solutions, comprehensive writeups, and exploit code for **32 CTF challenges** from **Hack The Box** competitions across 9 security categories. Each challenge has been documented with:
 
 - Detailed challenge analysis and vulnerability identification
 - Step-by-step solution methodology  
@@ -20,16 +21,33 @@ This repository contains professionally organized solutions, comprehensive write
 
 **Target Audience:** Security enthusiasts, CTF players, penetration testers, and anyone learning offensive security techniques.
 
+### 🎯 Challenge Source
+
+All challenges are from **Hack The Box (HTB)** competitions:
+- **Primary Source**: HTB Business CTF 2025
+- **Additional Source**: HTB Cyber Apocalypse series
+- **Platform**: https://www.hackthebox.com/
+
+### 🛠️ Development Environment
+
+Solutions developed using:
+- **Operating Systems**: Kali Linux (VMware), WSL Ubuntu
+- **Security Distribution**: Kali Linux with full toolset
+- **Development Tools**: GitHub Copilot CLI, AI assistants for development
+- **Network Tools**: ngrok for secure tunneling
+- **Reference Materials**: [HTB Business CTF 2025 Official Repository](https://github.com/hackthebox/business-ctf-2025)
+
 ## 📊 Repository Statistics
 
 | Metric | Count |
 |--------|-------|
-| **Total Challenges** | 31 |
+| **Total Challenges** | 32 |
 | **Categories** | 9 |
-| **Writeups** | 31 |
+| **Completed Writeups** | 30 |
+| **In Progress** | 1 (pwn/router_web) |
 | **Exploit Scripts** | 40+ |
 | **Documentation Pages** | 70+ |
-| **Status** | 100% Complete |
+| **Status** | 97% Complete |
 
 ### Challenge Difficulty Distribution
 
@@ -42,7 +60,7 @@ This repository contains professionally organized solutions, comprehensive write
 | Category | Challenges | Skills |
 |----------|-----------|--------|
 | Web | 8 | XSS, SQL Injection, SSRF, Command Injection |
-| pwn | 5 | Buffer Overflow, ROP, Format Strings |
+| pwn | 6 | Buffer Overflow, ROP, Format Strings, Web Pwn |
 | rev | 5 | Binary Analysis, Decompilation, Obfuscation |
 | Misc | 6 | Scripting, Protocol Analysis, Automation |
 | forensics | 3 | PCAP Analysis, Firmware, Log Analysis |
@@ -105,12 +123,13 @@ CTF-Try-Out-2025/
 2. **hw_debug** - Logic analyzer / UART decoding
 3. **its_oops_pm** - VHDL hardware backdoor analysis
 
-### pwn - Binary Exploitation (5/5) ✓
-1. **getting_started** - Buffer overflow introduction
-2. **abyss** - Format string vulnerability
-3. **labyrinth** - Stack overflow + canary bypass
-4. **regularity** - Advanced stack exploitation
-5. **void** - Multi-protection bypass / ret2libc
+### pwn - Binary Exploitation (5/6) 🔄
+1. **getting_started** - Buffer overflow introduction ✅
+2. **abyss** - Format string vulnerability ✅
+3. **labyrinth** - Stack overflow + canary bypass ✅
+4. **regularity** - Advanced stack exploitation ✅
+5. **void** - Multi-protection bypass / ret2libc ✅
+6. **router_web** - 🚧 In Progress (Web-based pwn challenge)
 
 ### rev - Reverse Engineering (5/5) ✓
 1. **dontpanic** - Basic binary analysis
@@ -131,7 +150,8 @@ CTF-Try-Out-2025/
 
 ## 🔄 Categories In Progress
 
-**All categories complete!** 🎉
+### pwn Category
+- **router_web** - Web-based binary exploitation challenge (Currently being solved)
 
 ## 📋 Standard Challenge Structure
 
@@ -230,13 +250,18 @@ pip3 install pwntools requests web3 cryptography
 
 ### Common Tools Used
 - **Python** - Main scripting language
-- **Pwntools** - Binary exploitation
+- **Pwntools** - Binary exploitation framework
 - **Web3.py** - Blockchain interaction
-- **Requests** - HTTP client
-- **Wireshark/tshark** - Network analysis
-- **Binwalk** - Firmware analysis
-- **Foundry/Cast** - Smart contract tools
+- **Requests** - HTTP client library
+- **Wireshark/tshark** - Network protocol analysis
+- **Binwalk** - Firmware analysis and extraction
+- **Foundry/Cast** - Smart contract development and testing
 - **Docker** - Challenge containerization
+- **ngrok** - Secure tunneling for remote access
+- **Kali Linux Tools** - Comprehensive penetration testing suite
+- **GitHub Copilot CLI** - AI-assisted development
+- **Burp Suite** - Web application security testing
+- **GDB/pwndbg** - Debugging and binary analysis
 
 ### Languages & Frameworks
 - Python, JavaScript, Solidity
@@ -331,27 +356,27 @@ All challenges in this repository are from:
 
 | Metric | Value |
 |--------|-------|
-| Total Challenges | 31 |
+| Total Challenges | 32 (30 complete + 1 in progress) |
 | Categories | 9 |
-| Writeups | 31 comprehensive READMEs |
+| Writeups | 30 comprehensive READMEs |
 | Exploit Scripts | 40+ working solutions |
 | Documentation | 70+ pages |
 | Code Comments | Extensive |
-| Organization Status | 100% Complete ✅ |
+| Organization Status | 97% Complete ✅ |
 | Last Updated | 2025-11-12 |
 
 ### By Difficulty
-- 🟢 Easy: 12 challenges (39%)
-- 🟡 Medium: 15 challenges (48%)
-- 🔴 Hard: 4 challenges (13%)
+- 🟢 Easy: 12 challenges (38%)
+- 🟡 Medium: 16 challenges (50%)
+- 🔴 Hard: 4 challenges (12%)
 
 ### By Category
-- Web Security: 8 challenges (26%)
-- Binary Exploitation: 5 challenges (16%)
+- Web Security: 8 challenges (25%)
+- Binary Exploitation: 6 challenges (19%, 1 in progress)
 - Reverse Engineering: 5 challenges (16%)
 - Miscellaneous: 6 challenges (19%)
-- Forensics: 3 challenges (10%)
-- Hardware: 3 challenges (10%)
+- Forensics: 3 challenges (9%)
+- Hardware: 3 challenges (9%)
 - Cryptography: 1 challenge (3%)
 - Blockchain: 1 challenge (3%)
 - Coding: 1 challenge (3%)
@@ -360,16 +385,32 @@ All challenges in this repository are from:
 
 This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+### Challenge Attribution
+
+All CTF challenges are from **Hack The Box (HTB)** competitions:
+- **Original Challenges**: © Hack The Box Ltd.
+- **Solutions & Writeups**: © 2025 Om Gajjar
+- **Platform**: https://www.hackthebox.com/
+
 ### Third-Party Content
-- Challenge descriptions and scenarios remain property of original authors
+- Challenge descriptions and scenarios remain property of Hack The Box
 - Exploit code and writeups are original work unless otherwise noted
 - External tools and libraries retain their respective licenses
 
 ## 🤝 Acknowledgments
 
-### Challenge Platforms
-- **HackTheBox** - Primary challenge source (Cyber Apocalypse CTF)
+### Challenge Platforms & Sources
+- **Hack The Box** - Primary challenge source (Business CTF 2025, Cyber Apocalypse series)
+- **HTB Business CTF 2025 Official Repository** - [Reference materials and insights](https://github.com/hackthebox/business-ctf-2025)
 - **CTFtime** - Community and event coordination
+
+### Development Environment
+- **Kali Linux** - Primary security testing distribution (VMware)
+- **WSL Ubuntu** - Development environment
+- **Kali Tools** - Comprehensive penetration testing toolkit
+- **GitHub Copilot CLI** - AI-assisted development and code generation
+- **Various AI Assistants** - Development support and problem-solving
+- **ngrok** - Secure tunneling for remote challenge access
 
 ### Tools & Frameworks
 - **Pwntools** - Binary exploitation framework

@@ -19,3 +19,50 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Challenge Attribution
+
+All CTF challenges in this repository are from **Hack The Box (HTB)** events,
+primarily from HTB Business CTF 2025 and HTB Cyber Apocalypse competitions.
+
+- **Challenge Source**: Hack The Box (https://www.hackthebox.com/)
+- **Original Challenges**: © Hack The Box Ltd.
+- **Solutions & Writeups**: © 2025 Om Gajjar
+
+The challenges themselves are property of Hack The Box Ltd. This repository
+contains educational writeups, solutions, and documentation created by the
+author for learning purposes.
+
+## Tools & Environment Attribution
+
+Solutions in this repository were developed using:
+- **Operating Systems**: Kali Linux (VMware), WSL Ubuntu
+- **Security Tools**: Kali Linux toolset
+- **Development Tools**: GitHub Copilot CLI, various AI assistants
+- **Network Tools**: ngrok for tunneling
+- **Reference Materials**: HTB Business CTF 2025 official repository
+  (https://github.com/hackthebox/business-ctf-2025)
+
+## Educational Use Disclaimer
+
+This repository is intended for educational purposes only. The solutions and
+techniques demonstrated here should only be used in authorized environments
+such as CTF competitions, penetration testing with proper authorization, or
+personal learning labs.
+
+**Users are responsible for ensuring they comply with all applicable laws and
+regulations when using the information contained in this repository.**
+
+## Challenge Status
+
+Most challenges have been solved and documented. Some challenges may be marked
+as "In Progress" or incomplete and are being actively worked on.
+
+## Acknowledgments
+
+- Hack The Box team for creating excellent CTF challenges
+- HTB Community for sharing knowledge and writeups
+- Open-source security tools and their maintainers
+- AI assistants for development support

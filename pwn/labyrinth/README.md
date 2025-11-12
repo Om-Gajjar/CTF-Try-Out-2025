@@ -1,43 +1,51 @@
-# Labyrinth - PWN Challenge
+# Labyrinth - CTF Challenge
 
-**Status:** ✅ SOLVED  
-**Difficulty:** Easy (1000 points)  
-**Flag:** `HTB{3sc4p3_fr0m_4b0v3}`
+## 📋 Challenge Information
 
-## Quick Start
+**Category:** Pwn / Binary Exploitation  
+**Difficulty:** Easy-Medium  
+**Challenge Type:** Stack-based Buffer Overflow with Canary Bypass  
+
+## 📝 Challenge Description
+
+Navigate through a labyrinth of security protections. This challenge involves bypassing stack canaries and exploiting buffer overflows in a more realistic scenario with modern protections enabled.
+
+## 🚀 Quick Start
 
 ```bash
-# Run the exploit
-python3 exploit.py
+cd pwn/labyrinth
+python3 solution/exploit.py
 ```
 
-## Files
+## 📁 Folder Structure
 
-- `labyrinth` - The vulnerable binary
-- `exploit.py` - Working exploit script (documented)
-- `SOLUTION_GUIDE.md` - Complete walkthrough for 2nd year BSc IT students
-- `flag.txt` - Local test flag
+```
+labyrinth/
+├── README.md
+├── solution/
+│   └── exploit.py        # Python exploit
+├── data/
+│   ├── labyrinth         # Target binary
+│   ├── flag.txt
+│   └── glibc/            # Library files
+└── docs/
+    ├── README.md         # Additional info
+    └── SOLUTION_GUIDE.md # Complete walkthrough
+```
 
-## Challenge Summary
+## 💡 Key Concepts
 
-This challenge involves:
-1. Finding door 69 triggers a second prompt
-2. Exploiting a buffer overflow (68 bytes read into 48-byte buffer)
-3. Overwriting the return address with `escape_plan` function address
-4. Using a RET gadget for x64 stack alignment
+- Stack canaries and bypass techniques
+- Return-oriented programming (ROP)
+- Information leaks
+- ASLR and PIE
 
-## Key Learning Points
+## 📖 Resources
 
-- Buffer overflow exploitation basics
-- Return address overwrite technique
-- x64 stack alignment requirements
-- Binary analysis with objdump/nm
-- Pwntools usage
+- See `docs/SOLUTION_GUIDE.md` for detailed walkthrough
+- Exploit script in `solution/exploit.py`
 
-## Solution in 3 Steps
+---
 
-1. **Select door 69** at first prompt
-2. **Send overflow payload**: 56 bytes padding + RET gadget (0x401016) + escape_plan (0x401255)
-3. **Receive flag** from the hidden `escape_plan` function
-
-See `SOLUTION_GUIDE.md` for detailed explanation!
+**Difficulty:** Easy-Medium  
+**Type:** Stack Overflow + Canary Bypass

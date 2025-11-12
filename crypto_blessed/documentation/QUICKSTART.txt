@@ -1,0 +1,149 @@
+┌─────────────────────────────────────────────────────────┐
+│         BLESSED CTF CHALLENGE - SETUP COMPLETE          │
+│              Ready for WSL Ubuntu Execution             │
+└─────────────────────────────────────────────────────────┘
+
+📦 FOLDER CONTENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Essential Files:
+  ✓ solver.py          - Complete exploit (requires SageMath)
+  ✓ setup.sh           - Automated installation script
+  ✓ requirements.txt   - Python dependencies
+  ✓ server.py          - Challenge source code
+
+Documentation:
+  ✓ README.md                  - User quick start guide
+  ✓ SOLUTION_WRITEUP.md        - Full technical writeup
+  ✓ AI_ASSISTANT_README.md     - For GitHub Copilot CLI
+  ✓ QUICKSTART.txt             - This file
+
+🎯 QUICK START COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Option 1: Automated Setup (Recommended)
+─────────────────────────────────────────
+cd /path/to/crypto_blessed
+./setup.sh
+# Follow prompts
+sage -python solver.py
+
+Option 2: Manual Install
+─────────────────────────
+sudo apt update && sudo apt install sagemath -y
+pip install -r requirements.txt
+sage -python solver.py
+
+Option 3: Docker (No Local Install)
+────────────────────────────────────
+docker pull sagemath/sagemath
+docker run -it --rm -v $(pwd):/work -w /work \
+  sagemath/sagemath sage -python solver.py
+
+⚙️ WHAT HAPPENS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Creates robot on server (83.136.254.84:54006)
+2. Lists all robots to collect PRNG outputs
+3. Computes rogue BLS public key
+4. Cracks EC-LCG with LLL lattice [10-30 sec]
+5. Cheats ZKP by predicting 64 challenges [30-60 sec]
+6. Forges aggregate signature
+7. Unveils secrets → FLAG!
+
+⏱️ Expected Runtime: 1-2 minutes
+
+🔑 KEY REQUIREMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  SAGEMATH IS MANDATORY ⚠️
+
+Why? The LLL lattice attack cannot be done with pure Python.
+
+Installation methods (in order of ease):
+  1. Docker (easiest, no system changes)
+  2. apt-get (if available in your repos)
+  3. Conda (reliable, takes ~10 min)
+  4. Build from source (slowest, 1-2 hours)
+
+📋 PRE-RUN CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ SageMath installed: sage --version
+□ Python deps installed: pip list | grep py_ecc
+□ Server accessible: nc -zv 83.136.254.84 54006
+□ Scripts executable: ls -l solver.py setup.sh
+
+✅ SUCCESS OUTPUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+You should see:
+  [+] Created robot ID: 0x...
+  [+] Found 5 robots
+  [+] Rogue public key computed and verified!
+  [+] EC-LCG PRNG cracked!
+  [+] ZKP verification passed!
+  [+] FLAG: HTB{...}
+
+🐛 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problem: "sage: command not found"
+Solution: 
+  conda activate sage  # if using conda
+  OR
+  sudo apt install sagemath
+
+Problem: Import errors
+Solution:
+  sage -pip install -r requirements.txt
+
+Problem: Connection refused
+Solution:
+  Check server is up: nc -zv 83.136.254.84 54006
+
+Problem: LLL takes forever
+Solution:
+  This is normal (10-30 sec). Be patient.
+
+Problem: ZKP fails
+Solution:
+  Very rare. Re-run the script (different robot IDs).
+
+📚 FOR LEARNING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Want to understand the math?
+  → Read SOLUTION_WRITEUP.md
+
+Want to see the vulnerability?
+  → Review server.py (lines 24-36 for PRNG)
+
+Want to modify the exploit?
+  → Edit solver.py (well-commented)
+
+📞 FOR AI ASSISTANTS (GitHub Copilot CLI)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Read: AI_ASSISTANT_README.md
+Contains:
+  - Full context of what was done
+  - What needs to be done now
+  - Step-by-step setup instructions
+  - Troubleshooting guide
+  - Expected output format
+
+🚀 READY TO GO!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This folder is now PORTABLE and SELF-CONTAINED.
+
+Move it anywhere, run ./setup.sh, then solver.py.
+
+The flag is waiting! 🎯
+
+Target: 83.136.254.84:54006
+Challenge: Blessed (Hard - 1000 pts)
+Time to flag: ~2 minutes
+
+════════════════════════════════════════════════════════════

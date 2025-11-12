@@ -1,0 +1,4 @@
+py_ecc
+eth-typing
+pycryptodome
+pwntools

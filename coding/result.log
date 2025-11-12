@@ -1,0 +1,423 @@
+You will be given a number of t = 100 grids for the different regions you need to pass. For every map you will have the below values:
+	1. The dimensions i x j of the map grid where 2 <= i, j <= 100
+	2. The numbers n_i,j symbolizing the distances between the blocks where 1 <= n_i,j <= 50
+You will start at the top left element, and your goal is to reach the bottom right, while only being allowed to move down or right, minimizing the sum of the numbers you pass. Provide the minimum sum.
+
+Example Question:
+	4 3
+	2 5 1 9 2 3 9 1 3 11 7 4
+
+This generates the following grid:
+	 2 5 1
+	 9 2 3
+	 9 1 3
+	11 7 4
+
+Example Response:
+	17
+(Optimal route is 2 -> 5 -> 2 -> 1 -> 3 -> 4)
+
+Test 1/100
+
+=== Test 1/100 ===
+2x4 -> Answer: 30
+Response: >
+
+=== Test 2/100 ===
+2x3 -> Answer: 24
+Response: >
+
+=== Test 3/100 ===
+2x5 -> Answer: 33
+Response: >
+
+=== Test 4/100 ===
+2x4 -> Answer: 16
+Response: >
+
+=== Test 5/100 ===
+2x2 -> Answer: 14
+Response: >
+
+=== Test 6/100 ===
+4x5 -> Answer: 34
+Response: >
+
+=== Test 7/100 ===
+3x5 -> Answer: 29
+Response: >
+
+=== Test 8/100 ===
+2x5 -> Answer: 23
+Response: >
+
+=== Test 9/100 ===
+2x3 -> Answer: 21
+Response: >
+
+=== Test 10/100 ===
+2x4 -> Answer: 15
+Response: >
+
+=== Test 11/100 ===
+3x3 -> Answer: 23
+Response: >
+
+=== Test 12/100 ===
+3x4 -> Answer: 22
+Response: >
+
+=== Test 13/100 ===
+2x4 -> Answer: 28
+Response: >
+
+=== Test 14/100 ===
+4x4 -> Answer: 27
+Response: >
+
+=== Test 15/100 ===
+5x4 -> Answer: 28
+Response: >
+
+=== Test 16/100 ===
+4x4 -> Answer: 21
+Response: >
+
+=== Test 17/100 ===
+5x3 -> Answer: 33
+Response: >
+
+=== Test 18/100 ===
+4x2 -> Answer: 19
+Response: >
+
+=== Test 19/100 ===
+2x5 -> Answer: 33
+Response: >
+
+=== Test 20/100 ===
+2x5 -> Answer: 29
+Response: >
+
+=== Test 21/100 ===
+2x3 -> Answer: 17
+Response: >
+
+=== Test 22/100 ===
+7x11 -> Answer: 131
+Response: >
+
+=== Test 23/100 ===
+15x7 -> Answer: 186
+Response: >
+
+=== Test 24/100 ===
+14x2 -> Answer: 130
+Response: >
+
+=== Test 25/100 ===
+15x5 -> Answer: 150
+Response: >
+
+=== Test 26/100 ===
+14x13 -> Answer: 183
+Response: >
+
+=== Test 27/100 ===
+8x9 -> Answer: 95
+Response: >
+
+=== Test 28/100 ===
+6x5 -> Answer: 76
+Response: >
+
+=== Test 29/100 ===
+10x7 -> Answer: 118
+Response: >
+
+=== Test 30/100 ===
+12x5 -> Answer: 163
+Response: >
+
+=== Test 31/100 ===
+9x5 -> Answer: 109
+Response: >
+
+=== Test 32/100 ===
+9x2 -> Answer: 77
+Response: >
+
+=== Test 33/100 ===
+8x7 -> Answer: 83
+Response: >
+
+=== Test 34/100 ===
+10x8 -> Answer: 131
+Response: >
+
+=== Test 35/100 ===
+10x13 -> Answer: 206
+Response: >
+
+=== Test 36/100 ===
+6x13 -> Answer: 152
+Response: >
+
+=== Test 37/100 ===
+2x10 -> Answer: 85
+Response: >
+
+=== Test 38/100 ===
+2x14 -> Answer: 142
+Response: >
+
+=== Test 39/100 ===
+15x6 -> Answer: 151
+Response: >
+
+=== Test 40/100 ===
+15x6 -> Answer: 151
+Response: >
+
+=== Test 41/100 ===
+10x3 -> Answer: 93
+Response: >
+
+=== Test 42/100 ===
+16x18 -> Answer: 366
+Response: >
+
+=== Test 43/100 ===
+17x30 -> Answer: 501
+Response: >
+
+=== Test 44/100 ===
+27x13 -> Answer: 370
+Response: >
+
+=== Test 45/100 ===
+25x19 -> Answer: 441
+Response: >
+
+=== Test 46/100 ===
+26x25 -> Answer: 443
+Response: >
+
+=== Test 47/100 ===
+10x7 -> Answer: 151
+Response: >
+
+=== Test 48/100 ===
+9x16 -> Answer: 270
+Response: >
+
+=== Test 49/100 ===
+13x5 -> Answer: 205
+Response: >
+
+=== Test 50/100 ===
+10x6 -> Answer: 204
+Response: >
+
+=== Test 51/100 ===
+7x11 -> Answer: 164
+Response: >
+
+=== Test 52/100 ===
+27x5 -> Answer: 394
+Response: >
+
+=== Test 53/100 ===
+2x15 -> Answer: 156
+Response: >
+
+=== Test 54/100 ===
+9x30 -> Answer: 371
+Response: >
+
+=== Test 55/100 ===
+24x19 -> Answer: 354
+Response: >
+
+=== Test 56/100 ===
+11x3 -> Answer: 181
+Response: >
+
+=== Test 57/100 ===
+27x15 -> Answer: 416
+Response: >
+
+=== Test 58/100 ===
+27x3 -> Answer: 395
+Response: >
+
+=== Test 59/100 ===
+26x17 -> Answer: 431
+Response: >
+
+=== Test 60/100 ===
+18x12 -> Answer: 283
+Response: >
+
+=== Test 61/100 ===
+29x30 -> Answer: 537
+Response: >
+
+=== Test 62/100 ===
+12x30 -> Answer: 515
+Response: >
+
+=== Test 63/100 ===
+42x4 -> Answer: 718
+Response: >
+
+=== Test 64/100 ===
+34x7 -> Answer: 627
+Response: >
+
+=== Test 65/100 ===
+36x33 -> Answer: 810
+Response: >
+
+=== Test 66/100 ===
+15x20 -> Answer: 478
+Response: >
+
+=== Test 67/100 ===
+49x17 -> Answer: 782
+Response: >
+
+=== Test 68/100 ===
+19x27 -> Answer: 573
+Response: >
+
+=== Test 69/100 ===
+45x37 -> Answer: 1013
+Response: >
+
+=== Test 70/100 ===
+38x20 -> Answer: 714
+Response: >
+
+=== Test 71/100 ===
+11x35 -> Answer: 664
+Response: >
+
+=== Test 72/100 ===
+6x26 -> Answer: 517
+Response: >
+
+=== Test 73/100 ===
+50x18 -> Answer: 875
+Response: >
+
+=== Test 74/100 ===
+46x32 -> Answer: 937
+Response: >
+
+=== Test 75/100 ===
+6x26 -> Answer: 423
+Response: >
+
+=== Test 76/100 ===
+29x41 -> Answer: 692
+Response: >
+
+=== Test 77/100 ===
+6x41 -> Answer: 607
+Response: >
+
+=== Test 78/100 ===
+5x15 -> Answer: 351
+Response: >
+
+=== Test 79/100 ===
+49x11 -> Answer: 899
+Response: >
+
+=== Test 80/100 ===
+36x23 -> Answer: 829
+Response: >
+
+=== Test 81/100 ===
+2x18 -> Answer: 363
+Response: >
+
+=== Test 82/100 ===
+92x31 -> Answer: 1916
+Response: >
+
+=== Test 83/100 ===
+43x89 -> Answer: 1866
+Response: >
+
+=== Test 84/100 ===
+79x49 -> Answer: 1893
+Response: >
+
+=== Test 85/100 ===
+30x23 -> Answer: 801
+Response: >
+
+=== Test 86/100 ===
+79x23 -> Answer: 1689
+Response: >
+
+=== Test 87/100 ===
+23x87 -> Answer: 1737
+Response: >
+
+=== Test 88/100 ===
+64x28 -> Answer: 1285
+Response: >
+
+=== Test 89/100 ===
+97x49 -> Answer: 2190
+Response: >
+
+=== Test 90/100 ===
+93x78 -> Answer: 2362
+Response: >
+
+=== Test 91/100 ===
+36x6 -> Answer: 786
+Response: >
+
+=== Test 92/100 ===
+57x17 -> Answer: 1095
+Response: >
+
+=== Test 93/100 ===
+70x50 -> Answer: 1581
+Response: >
+
+=== Test 94/100 ===
+20x60 -> Answer: 1354
+Response: >
+
+=== Test 95/100 ===
+54x20 -> Answer: 1222
+Response: >
+
+=== Test 96/100 ===
+74x64 -> Answer: 1882
+Response: >
+
+=== Test 97/100 ===
+65x81 -> Answer: 2001
+Response: >
+
+=== Test 98/100 ===
+79x33 -> Answer: 1716
+Response: >
+
+=== Test 99/100 ===
+92x67 -> Answer: 2272
+Response: >
+
+=== Test 100/100 ===
+35x9 -> Answer: 829
+Response: > You managed to traverse the maze of the underground and escape the behemoth. Here is your reward: HTB{b3h3M07H_5h0uld_H4v3_57ud13D_dYM4m1C_pr09r4mm1n9_70_C47ch_y0u_ad294f94acaa2d1584b6d1b35d6e5ec7}
+
+===FLAG: > You managed to traverse the maze of the underground and escape the behemoth. Here is your reward: HTB{b3h3M07H_5h0uld_H4v3_57ud13D_dYM4m1C_pr09r4mm1n9_70_C47ch_y0u_ad294f94acaa2d1584b6d1b35d6e5ec7}
+===

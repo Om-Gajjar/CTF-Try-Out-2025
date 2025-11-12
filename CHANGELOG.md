@@ -9,13 +9,13 @@ All notable changes to the CTF-Try-Out-2025 repository organization will be docu
 #### LICENSE Enhanced
 - Updated LICENSE with comprehensive attribution section
 - Added Hack The Box (HTB) challenge source attribution
-- Documented HTB Business CTF 2025 and HTB Cyber Apocalypse as challenge sources
+- Documented HTB Business CTF 2024 and HTB Cyber Apocalypse as challenge sources
 - Added tools and environment attribution:
   - Operating Systems: Kali Linux (VMware), WSL Ubuntu
   - Security Tools: Kali Linux toolset
   - Development Tools: GitHub Copilot CLI, AI assistants
   - Network Tools: ngrok
-  - Reference: HTB Business CTF 2025 official repository
+  - Reference: HTB Business CTF 2024 official repository
 - Added educational use disclaimer
 - Added challenge status section
 - Included comprehensive acknowledgments
@@ -32,7 +32,7 @@ All notable changes to the CTF-Try-Out-2025 repository organization will be docu
   - Kali Linux toolset
   - GitHub Copilot CLI, AI assistants
   - ngrok
-  - HTB Business CTF 2025 repository reference
+  - HTB Business CTF 2024 repository reference
 - Updated pwn category listing (5/6 challenges, 1 in progress)
 - Added "Categories In Progress" section
 - Enhanced tools list with additional tools
@@ -49,7 +49,7 @@ All notable changes to the CTF-Try-Out-2025 repository organization will be docu
 ### Attribution Details
 
 **Challenge Sources:**
-- HTB Business CTF 2025
+- HTB Business CTF 2024
 - HTB Cyber Apocalypse series
 - All challenges © Hack The Box Ltd.
 - Solutions © 2025 Om Gajjar
@@ -61,7 +61,7 @@ All notable changes to the CTF-Try-Out-2025 repository organization will be docu
 - GitHub Copilot CLI
 - Various AI assistants
 - ngrok for tunneling
-- Reference: https://github.com/hackthebox/business-ctf-2025
+- Reference: https://github.com/hackthebox/business-ctf-2024
 
 ---
 

@@ -1,6 +1,6 @@
 # CTF-Try-Out-2025 🏴‍☠️
 
-> A comprehensive collection of CTF challenge writeups and solutions from **Hack The Box (HTB) Business CTF 2025** and **HTB Cyber Apocalypse** competitions
+> A comprehensive collection of CTF challenge writeups and solutions from **Hack The Box (HTB) Business CTF 2024** and **HTB Cyber Apocalypse** competitions
 
 [![Challenges](https://img.shields.io/badge/Challenges-32-brightgreen)]()
 [![Categories](https://img.shields.io/badge/Categories-9-blue)]()
@@ -24,7 +24,7 @@ This repository contains professionally organized solutions, comprehensive write
 ### 🎯 Challenge Source
 
 All challenges are from **Hack The Box (HTB)** competitions:
-- **Primary Source**: HTB Business CTF 2025
+- **Primary Source**: HTB Business CTF 2024
 - **Additional Source**: HTB Cyber Apocalypse series
 - **Platform**: https://www.hackthebox.com/
 
@@ -35,7 +35,7 @@ Solutions developed using:
 - **Security Distribution**: Kali Linux with full toolset
 - **Development Tools**: GitHub Copilot CLI, AI assistants for development
 - **Network Tools**: ngrok for secure tunneling
-- **Reference Materials**: [HTB Business CTF 2025 Official Repository](https://github.com/hackthebox/business-ctf-2025)
+- **Reference Materials**: [HTB Business CTF 2024 Official Repository](https://github.com/hackthebox/business-ctf-2024)
 
 ## 📊 Repository Statistics
 
@@ -400,8 +400,8 @@ All CTF challenges are from **Hack The Box (HTB)** competitions:
 ## 🤝 Acknowledgments
 
 ### Challenge Platforms & Sources
-- **Hack The Box** - Primary challenge source (Business CTF 2025, Cyber Apocalypse series)
-- **HTB Business CTF 2025 Official Repository** - [Reference materials and insights](https://github.com/hackthebox/business-ctf-2025)
+- **Hack The Box** - Primary challenge source (Business CTF 2024, Cyber Apocalypse series)
+- **HTB Business CTF 2024 Official Repository** - [Reference materials and insights](https://github.com/hackthebox/business-ctf-2024)
 - **CTFtime** - Community and event coordination
 
 ### Development Environment

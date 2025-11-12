@@ -6,7 +6,7 @@
 
 | Property | Value |
 |----------|-------|
-| **Event** | HTB Cyber Apocalypse CTF |
+| **Event** | HTB CTF Try Out (Event 1434) |
 | **Category** | Web |
 | **Difficulty** | ⭐ Very Easy |
 | **Points** | 925 |
@@ -151,7 +151,7 @@ HTB{hidden_api_commands_ftw}
 
 **Writeup Author:** CTF Team  
 **Challenge Author:** HackTheBox  
-**Challenge Platform:** Hack The Box - Cyber Apocalypse CTF
+**Challenge Platform:** Hack The Box - CTF Try Out (Event 1434)
 
 ---
 

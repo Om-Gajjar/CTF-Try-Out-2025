@@ -316,7 +316,7 @@ This binary had minimal protections, making it easier to exploit.
 ## References
 
 ### Official Resources
-- [HTB Business CTF 2024 - Abyss Official Writeup](https://github.com/hackthebox/business-ctf-2024/tree/main/pwn/%5BEasy%5D%20Abyss)
+- [HTB CTF Try Out Event 1434](https://ctf.hackthebox.com/event/1434)
 - [pwntools Documentation](https://docs.pwntools.com/)
 
 ### Learning Resources

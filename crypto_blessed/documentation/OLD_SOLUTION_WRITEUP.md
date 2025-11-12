@@ -408,7 +408,7 @@ Weak EC-LCG → Predictable ZKP Challenges → Rogue Key Attack → Flag
 
 ## References
 
-- [Official HTB Business CTF 2024 Writeup](https://github.com/hackthebox/business-ctf-2024)
+- [HTB CTF Try Out Event 1434](https://ctf.hackthebox.com/event/1434)
 - [BLS12-381 For The Rest Of Us](https://hackmd.io/@benjaminion/bls12-381)
 - [Attacks on BLS Aggregate Signatures](https://eprint.iacr.org/2021/377.pdf)
 - [LLL Algorithm - Wikipedia](https://en.wikipedia.org/wiki/Lenstra%E2%80%93Lenstra%E2%80%93Lov%C3%A1sz_lattice_basis_reduction_algorithm)

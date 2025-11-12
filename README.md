@@ -1,6 +1,6 @@
 # CTF-Try-Out-2025 🏴‍☠️
 
-> A comprehensive collection of CTF challenge writeups and solutions from **Hack The Box (HTB) Business CTF 2024** and **HTB Cyber Apocalypse** competitions
+> A comprehensive collection of CTF challenge writeups and solutions from **Hack The Box (HTB) CTF Try Out** competition
 
 [![Challenges](https://img.shields.io/badge/Challenges-32-brightgreen)]()
 [![Categories](https://img.shields.io/badge/Categories-9-blue)]()
@@ -23,9 +23,9 @@ This repository contains professionally organized solutions, comprehensive write
 
 ### 🎯 Challenge Source
 
-All challenges are from **Hack The Box (HTB)** competitions:
-- **Primary Source**: HTB Business CTF 2024
-- **Additional Source**: HTB Cyber Apocalypse series
+All challenges are from **Hack The Box (HTB)** CTF Try Out:
+- **Primary Source**: HTB CTF Try Out (Event 1434)
+- **Event URL**: https://ctf.hackthebox.com/event/1434
 - **Platform**: https://www.hackthebox.com/
 
 ### 🛠️ Development Environment
@@ -35,7 +35,7 @@ Solutions developed using:
 - **Security Distribution**: Kali Linux with full toolset
 - **Development Tools**: GitHub Copilot CLI, AI assistants for development
 - **Network Tools**: ngrok for secure tunneling
-- **Reference Materials**: [HTB Business CTF 2024 Official Repository](https://github.com/hackthebox/business-ctf-2024)
+- **Reference Materials**: [HTB CTF Try Out Event Page](https://ctf.hackthebox.com/event/1434)
 
 ## 📊 Repository Statistics
 
@@ -346,7 +346,7 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 - ❌ **DON'T:** Share solutions during active CTF competitions
 
 All challenges in this repository are from:
-- Past CTF events (completed competitions)
+- HTB CTF Try Out (Event 1434) - an open practice event
 - Public practice platforms
 - Challenges explicitly allowed for writeup sharing
 
@@ -387,10 +387,10 @@ This repository is licensed under the MIT License - see the [LICENSE](LICENSE) f
 
 ### Challenge Attribution
 
-All CTF challenges are from **Hack The Box (HTB)** competitions:
+All CTF challenges are from **Hack The Box (HTB) CTF Try Out**:
 - **Original Challenges**: © Hack The Box Ltd.
 - **Solutions & Writeups**: © 2025 Om Gajjar
-- **Platform**: https://www.hackthebox.com/
+- **Event**: https://ctf.hackthebox.com/event/1434
 
 ### Third-Party Content
 - Challenge descriptions and scenarios remain property of Hack The Box
@@ -400,8 +400,8 @@ All CTF challenges are from **Hack The Box (HTB)** competitions:
 ## 🤝 Acknowledgments
 
 ### Challenge Platforms & Sources
-- **Hack The Box** - Primary challenge source (Business CTF 2024, Cyber Apocalypse series)
-- **HTB Business CTF 2024 Official Repository** - [Reference materials and insights](https://github.com/hackthebox/business-ctf-2024)
+- **Hack The Box** - Primary challenge source (CTF Try Out Event 1434)
+- **HTB CTF Try Out Event** - [Event page and challenges](https://ctf.hackthebox.com/event/1434)
 - **CTFtime** - Community and event coordination
 
 ### Development Environment

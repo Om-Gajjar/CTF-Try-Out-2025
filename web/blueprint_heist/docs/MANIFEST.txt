@@ -1,5 +1,5 @@
 Blueprint Heist - File Manifest
-HackTheBox Business CTF 2024
+HackTheBox CTF Try Out (Event 1434)
 Generated: November 10, 2025
 
 ═══════════════════════════════════════════════════════════════

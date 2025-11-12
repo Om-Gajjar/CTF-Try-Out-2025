@@ -11,7 +11,7 @@
 | Item | Details |
 |------|---------|
 | **Challenge** | Blueprint Heist |
-| **Platform** | HackTheBox Business CTF 2024 |
+| **Platform** | HackTheBox CTF Try Out (Event 1434) |
 | **Category** | Web |
 | **Difficulty** | Easy |
 | **Points** | 1000 |
@@ -195,7 +195,7 @@ print(result)  # Flag!
 ## 📞 Contact & Credits
 
 **Challenge Author:** lordrukie (HackTheBox)  
-**Platform:** HackTheBox Business CTF 2024  
+**Platform:** HackTheBox CTF Try Out (Event 1434)  
 **Category:** Web Exploitation  
 
 **Solver:** AI Security Analyst  

@@ -6,7 +6,7 @@
 **Points:** 1000  
 **Status:** ✅ SOLVED
 
-**CTF:** HTB Business CTF 2024
+**CTF:** HTB CTF Try Out (Event 1434)
 
 ---
 
@@ -662,8 +662,7 @@ Challenge misconfigured in current HTB infrastructure.
 
 ## References
 
-- Official Writeup: https://github.com/hackthebox/business-ctf-2024/blob/main/web/%5BEasy%5D%20HTB%20Proxy/README.md
-- HTB Business CTF 2024
+- HTB CTF Try Out (Event 1434): https://ctf.hackthebox.com/event/1434
 
 
 ---

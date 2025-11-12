@@ -1,7 +1,7 @@
 # Blueprint Heist - Complete CTF Writeup
 
 **Challenge:** Blueprint Heist  
-**Platform:** HackTheBox Business CTF 2024  
+**Platform:** HackTheBox CTF Try Out (Event 1434)  
 **Category:** Web  
 **Difficulty:** Easy (1000 points)  
 **Target:** 94.237.59.225:55358  
@@ -751,7 +751,7 @@ This challenge teaches valuable lessons for both attackers and defenders about:
 
 **Author:** AI Security Analyst  
 **Date:** November 10, 2025  
-**Challenge:** Blueprint Heist (HTB Business CTF 2024)  
+**Challenge:** Blueprint Heist (HTB CTF Try Out Event 1434)  
 **Status:** ✅ SOLVED  
 **Flag:** `HTB{ch41ning_m4st3rs_b4y0nd_1m4g1nary_7f3e2b14969335049b602fd88507b1f5}`
 

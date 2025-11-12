@@ -1,12 +1,30 @@
 #!/usr/bin/env python3
+"""
+Character CTF Challenge - Solution Script
+
+This script extracts a flag character by character from a remote service
+by querying sequential index positions.
+
+Target: 83.136.255.235:56527
+Category: Misc
+"""
+
 import socket
 import time
 
+# Target configuration
 host = '83.136.255.235'
 port = 56527
 
+# State variables
 flag = ''
 index = 0
+
+print("=" * 60)
+print("Character CTF Challenge - Flag Extraction")
+print("=" * 60)
+print(f"Target: {host}:{port}")
+print(f"Starting extraction...\n")
 
 while True:
     try:

